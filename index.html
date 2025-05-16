@@ -397,6 +397,11 @@
         }
 
         @media (max-width: 600px) {
+
+             .content {
+                font-size: clamp(16px, 4.5vw, 20px); /* Min 16px, ideal 4.5% of viewport width, max 20px */
+            }
+            
             .envelope-container {
                 width: 280px;
                 height: 192.5px;
@@ -448,6 +453,22 @@
       }
     }
 
+        .signature {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: clamp(12px, 3vw, 14px);
+            font-family: 'Pacifico', cursive;
+            color: #d81b60;
+            opacity: 1;
+            z-index: 10;
+            pointer-events: none;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.5s ease;
+            }
+            .envelope-container.open .signature {
+            opacity: 0;
+            }
 
     </style>
 </head>
@@ -458,6 +479,7 @@
         <div class="share-url" id="shareUrl"></div>
     </div>
     <div class="envelope-container" id="envelope" style="display: none;">
+    <div class="signature" id="signature">from Sudhanshu</div>
            
       <svg class="envelope" viewBox="0 0 320 220">
     <defs>
